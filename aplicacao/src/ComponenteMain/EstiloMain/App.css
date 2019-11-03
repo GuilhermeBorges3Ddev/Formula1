@@ -6,13 +6,19 @@
   background-color: black;
 }
 
+.bg-black {
+  background-color: black !important;
+  height: 80px;
+}
+
 body {
   font-family: "Open Sans", serif;
+  overflow-y: hidden;
 }
 
 .wrapper {
   background: url("./bg.png") center center no-repeat;
-  height: 100vh;
+  height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;

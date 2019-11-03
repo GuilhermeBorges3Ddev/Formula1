@@ -6,6 +6,7 @@ import './EstiloMain/bg.png';
 import Listagens from '../Componentes/Listagens';
 import Formulario from '../Componentes/Formulario';
 import ClimaInfo from '../Componentes/ClimaInfo';
+import BarraHorizontal from '../Componentes/BarraHorizontal';
 
 const API_KEY = "81101292e91a941f627ea27ec02cf4bd";
 
@@ -61,18 +62,23 @@ class App extends React.Component{
   render(){
     return (
       <div>
+        <BarraHorizontal/>
         <div className="wrapper">
-          <div className="bg-success">
-            <Formulario getData={this.getData}/>
-            <ClimaInfo
-              temperatura={this.state.temperatura}
-              cidade={this.state.cidade}
-              pais={this.state.pais}
-              umidade={this.state.umidade}
-              latitude={this.state.latitude}
-              longitude={this.state.longitude}
-              error={this.state.error}
-            />
+          <div className="row w-75 mx-auto">
+            <div className="col-12">
+              <Formulario getData={this.getData}/>
+            </div>
+            <div className="col-4">
+              <ClimaInfo
+                temperatura={this.state.temperatura}
+                cidade={this.state.cidade}
+                pais={this.state.pais}
+                umidade={this.state.umidade}
+                latitude={this.state.latitude}
+                longitude={this.state.longitude}
+                error={this.state.error}
+              />
+            </div>
             <Listagens/>
           </div>
         </div>
