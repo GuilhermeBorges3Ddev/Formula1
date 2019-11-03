@@ -62,29 +62,21 @@ class App extends React.Component{
     return (
       <div>
         <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-              <div className="col-6 form-container pt-5">
-                    <Formulario getData={this.getData}/>
-                    <ClimaInfo
-                      temperatura={this.state.temperatura}
-                      cidade={this.state.cidade}
-                      pais={this.state.pais}
-                      umidade={this.state.umidade}
-                      latitude={this.state.latitude}
-                      longitude={this.state.longitude}
-                      error={this.state.error}
-                      />
-                  </div>
-                  <div className="col-6 title-container">
-                    <Listagens/>
-                  </div>
-                </div>
-              </div>    
-            </div>
+          <div className="bg-success">
+            <Formulario getData={this.getData}/>
+            <ClimaInfo
+              temperatura={this.state.temperatura}
+              cidade={this.state.cidade}
+              pais={this.state.pais}
+              umidade={this.state.umidade}
+              latitude={this.state.latitude}
+              longitude={this.state.longitude}
+              error={this.state.error}
+            />
+            <Listagens/>
           </div>
-        </div> 
+        </div>
+      </div> 
     );
   }
 
