@@ -1,6 +1,6 @@
 import React from 'react';
 import './EstiloMain/App.css';
-import './EstiloMain/bg.jpg';
+import './EstiloMain/bg.png';
 
 //Importação dos componentes carregados dentro de App()
 import Listagens from '../Componentes/Listagens';

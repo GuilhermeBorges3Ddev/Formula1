@@ -11,7 +11,7 @@ body {
 }
 
 .wrapper {
-  background: linear-gradient(to right, #707070, #484858);
+  background: url("./bg.png") center center no-repeat;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -20,15 +20,6 @@ body {
 
 #lastSearch{
   margin-top: 30px;
-}
-
-.title-container {
-  height: 90vh;
-  background: url("./bg.jpg") center center no-repeat;
-  background-size: cover;
-  display: flex;
-  text-align: center;
-  color: #000;
 }
 
 .title {
