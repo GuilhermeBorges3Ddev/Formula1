@@ -3,9 +3,6 @@ import './EstiloMain/App.css';
 import './EstiloMain/bg.png';
 
 //Importação dos componentes carregados dentro de App()
-import Listagens from '../Componentes/Listagens';
-import Formulario from '../Componentes/Formulario';
-import ClimaInfo from '../Componentes/ClimaInfo';
 import BarraHorizontal from '../Componentes/BarraHorizontal';
 import BarraVertical from '../Componentes/BarraVertical';
 
@@ -76,20 +73,12 @@ class App extends React.Component{
           <div className="wrapper">
             <div className="row w-75 mx-auto">
                 <div className="col-12">
-                  <Formulario getData={this.getData}/>
+                  
                 </div>
                 <div className="col-4">
-                  <ClimaInfo
-                    temperatura={this.state.temperatura}
-                    cidade={this.state.cidade}
-                    pais={this.state.pais}
-                    umidade={this.state.umidade}
-                    latitude={this.state.latitude}
-                    longitude={this.state.longitude}
-                    error={this.state.error}
-                  />
+                  
                 </div>
-                <Listagens/>
+                
               </div>
             </div>
           </div>
@@ -102,3 +91,22 @@ class App extends React.Component{
 }
 
 export default App;
+
+
+/* ----------------------------------------------- COMPONENTES QUE AINDA PODEM SER APROVEITADOS
+
+<Formulario getData={this.getData}/>
+
+<ClimaInfo
+  temperatura={this.state.temperatura}
+  cidade={this.state.cidade}
+  pais={this.state.pais}
+  umidade={this.state.umidade}
+  latitude={this.state.latitude}
+  longitude={this.state.longitude}
+  error={this.state.error}
+/>
+
+<Listagens/>
+
+*/
