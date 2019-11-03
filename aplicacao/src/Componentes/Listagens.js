@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from "../ComponenteMain/EstiloMain/smarkio.png";
 
 //Fazendo chamada na API das duas consultas GET
 const linkOne = "http://localhost:3003/maisPesquisadas/"
@@ -7,11 +6,7 @@ const linkTwo = "http://localhost:3003/recentementePesquisadas/"
 
 const Listagens = () => {
     return (
-      <div className="text-center mx-auto">
-        
-        <div className="title">
-          <img src={Logo} alt="smarkioLogo"/>
-        </div>
+      <div className="col-12 text-center mx-auto">
 
         <div className="subtitle" id="mostSearch">
           <div class="alert alert-dark text-white" role="alert">

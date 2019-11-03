@@ -1,11 +1,10 @@
 import React from 'react';
 import './EstiloMain/App.css';
-import './EstiloMain/bg.jpg';
+import './EstiloMain/bg.png';
 
 //Importação dos componentes carregados dentro de App()
-import Listagens from '../Componentes/Listagens';
-import Formulario from '../Componentes/Formulario';
-import ClimaInfo from '../Componentes/ClimaInfo';
+import BarraHorizontal from '../Componentes/BarraHorizontal';
+import BarraVertical from '../Componentes/BarraVertical';
 
 const API_KEY = "81101292e91a941f627ea27ec02cf4bd";
 
@@ -60,34 +59,54 @@ class App extends React.Component{
 
   render(){
     return (
-      <div>
-        <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-              <div className="col-6 form-container pt-5">
-                    <Formulario getData={this.getData}/>
-                    <ClimaInfo
-                      temperatura={this.state.temperatura}
-                      cidade={this.state.cidade}
-                      pais={this.state.pais}
-                      umidade={this.state.umidade}
-                      latitude={this.state.latitude}
-                      longitude={this.state.longitude}
-                      error={this.state.error}
-                      />
-                  </div>
-                  <div className="col-6 title-container">
-                    <Listagens/>
-                  </div>
+
+      <div className="row">
+
+        <div className="col-2 p-0">
+          <BarraVertical />
+        </div>
+
+        <div className="col-10 p-0">
+          <div className="bar-horizontal">
+            <BarraHorizontal/>
+          </div>
+          <div className="wrapper">
+            <div className="row w-75 mx-auto">
+                <div className="col-12">
+                  
                 </div>
-              </div>    
+                <div className="col-4">
+                  
+                </div>
+                
+              </div>
             </div>
           </div>
-        </div> 
+
+        </div>
+
     );
   }
 
 }
 
 export default App;
+
+
+/* ----------------------------------------------- COMPONENTES QUE AINDA PODEM SER APROVEITADOS
+
+<Formulario getData={this.getData}/>
+
+<ClimaInfo
+  temperatura={this.state.temperatura}
+  cidade={this.state.cidade}
+  pais={this.state.pais}
+  umidade={this.state.umidade}
+  latitude={this.state.latitude}
+  longitude={this.state.longitude}
+  error={this.state.error}
+/>
+
+<Listagens/>
+
+*/
