@@ -4,7 +4,7 @@ import "../ComponenteMain/EstiloMain/App.css"
 
 const BarraHorizontal = props => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black border border-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
             <div class="container d-flex align-items-center justify-content-center py-0">
                 <a class="navbar-brand" href="/">
                     <img src={logo} height="60px" alt="ergastLogo"/>
