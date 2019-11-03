@@ -184,6 +184,7 @@ button:active {
 .sidebar-nav li {
   text-indent: 20px;
   line-height: 40px;
+  font-size: 13px;
 }
 
 .sidebar-nav li a {

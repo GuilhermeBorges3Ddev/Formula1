@@ -10,25 +10,25 @@ const BarraVertical = () => {
                         Relatórios
                     </li>
                     <li className="mt-2">
-                        <a href="/">Dashboard</a>
+                        <a href="/">Maiores Velocidades</a>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Shortcuts</a>
+                        <a href="/">Piloto por país</a>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Overview</a>
+                        <a href="/">Provas por circuitos</a>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Events</a>
+                        <a href="/">Médias das largadas</a>
                     </li>
                     <li className="mt-2">
-                        <a href="/">About</a>
+                        <a href="/">Assiduidade pilotos</a>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Services</a>
+                        <a href="/">Corridas por região</a>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Contact</a>
+                        <a href="/">Eventos pelo mundo</a>
                     </li>
                 </ul>
             </div>
