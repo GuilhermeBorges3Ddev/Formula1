@@ -1,0 +1,5 @@
+circuitos ---------------------------> CircuitInformation
+pilotos -----------------------------> DriverInformation 
+pontuacoes --------------------------> Standings
+datas -------------------------------> RaceSchedule
+resultados --------------------------> RaceResults
