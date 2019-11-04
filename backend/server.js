@@ -66,4 +66,4 @@ router.post("/putData", (req, res) => {
 
 app.use("/api", router);
 
-app.listen(API_PORT, () => console.log(`LISTENING ON UHH PORT ${API_PORT}`));
+app.listen(API_PORT, () => console.log(`LISTENING ON 3001 PORT ${API_PORT}`));
