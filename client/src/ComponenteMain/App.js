@@ -43,38 +43,28 @@ class App extends Component{
 
 ///////////////////////////////////////////  Inserções /////////////////////////////////////////////////////////
   putDataRacer = () => {
-    const reqDriver = await fetch('http://ergast.com/api/f1/drivers.json?callback=myParser'); 
-    const racers = await reqDriver.json();
-    axios.post("http://localhost:3001/api/putData", racers);
+    axios.post("http://localhost:3001/api/putData", fetch('http://ergast.com/api/f1/drivers.json?callback=myParser'));
   };
 
   putDataCircuit = () => {
-    const reqCircuit = await fetch('http://ergast.com/api/f1/circuits.json?callback=myParser'); 
-    const circuits = await reqCircuit.json();
-    axios.post("http://localhost:3001/api/putData", circuits);
+    axios.post("http://localhost:3001/api/putData", fetch('http://ergast.com/api/f1/circuits.json?callback=myParser'));
   };
 
   putDataStandings = () => {
-    const reqStanding = await fetch('http://ergast.com/api/f1/current/driverStandings.json'); 
-    const standings = await reqStanding.json();
-    axios.post("http://localhost:3001/api/putData", standings);
+    axios.post("http://localhost:3001/api/putData", fetch('http://ergast.com/api/f1/current/driverStandings.json'));
   };
 
   putRaceSchedules = () => {
-    const reqRaceSchedule = await fetch('http://ergast.com/api/f1/current'); 
-    const raceSchedules = await reqRaceSchedule.json();
-    axios.post("http://localhost:3001/api/putData", raceSchedules);
+    axios.post("http://localhost:3001/api/putData", fetch('http://ergast.com/api/f1/current'));
   };
 
   putRaceResults = () => {
-    const reqRaceResult = await fetch('https://ergast.com/api/f1/current/last/results.json'); 
-    const raceResults = await reqRaceResult.json();
-    axios.post("http://localhost:3001/api/putData", raceResults);
+    axios.post("http://localhost:3001/api/putData", fetch('https://ergast.com/api/f1/current/last/results.json'));
   };
   
   //
   render(){
-    const { data } = this.state;
+    // const { data } = this.state;
     return (
 
       <div className="row">
@@ -88,30 +78,48 @@ class App extends Component{
             <BarraHorizontal/>
           </div>
           <div className="wrapper">
-              <div className="row w-75 mx-auto">
-                <div className="col-12"> 
-                  <ul>
-                    {data.length <= 0 ? "NO DB ENTRIES YET" : data.map(dat => (
-                      <li style={{ padding: "10px" }} key={dat}>
-                        <span style={{ color: "gray" }}> id: </span> {dat.id} <br />
-                        <span style={{ color: "gray" }}> data: </span>
-                        {dat.message}
-                      </li>
-                    ))}
-                  </ul>
+
+              <div className="row w-75 ml-5 justify-content-between align-items-start">
                   <div style={{ padding: "10px" }}>
-                    <input
-                      type="text"
-                      onChange={e => this.setState({ message: e.target.value })}
-                      placeholder="add something in the database"
-                      style={{ width: "200px" }}
-                    />
-                    <button onClick={() => this.putDataToDB(this.state.message)}>
-                      ADD
+                    <h5 className="text-white">Clique para adicionar pilotos</h5>
+                    <button className="text-uppercase" onClick={() => this.putDataRacer()}>
+                      Adiciona Pilotos
                     </button>
                   </div>
+
+                  <div style={{ padding: "10px" }}>
+                    <h5 className="text-white">Clique para adicionar circuitos</h5>
+                    <button className="text-uppercase" onClick={() => this.putDataCircuit()}>
+                      Adiciona Circuitos
+                    </button>
+                  </div>
+              </div>
+
+              <div className="row w-75 ml-5 justify-content-between align-items-start">
+                  <div style={{ padding: "10px" }}>
+                    <h5 className="text-white">Clique para adicionar as pontuações</h5>
+                    <button className="text-uppercase" onClick={() => this.putDataStandings()}>
+                      Adiciona Pontuações
+                    </button>
+                  </div>
+
+                  <div style={{ padding: "10px" }}>
+                    <h5 className="text-white">Clique para adicionar datas</h5>
+                    <button className="text-uppercase" onClick={() => this.putRaceSchedules()}>
+                      Adiciona Datas
+                    </button>
+                  </div>
+              </div>
+              
+              <div className="row w-75 ml-2 justify-content-between align-items-start">
+                <div style={{ padding: "10px" }}>
+                    <h5 className="text-white">Clique para adicionar resultados</h5>
+                    <button className="text-uppercase" onClick={() => this.putRaceResults()}>
+                      Adiciona Resultados
+                    </button>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -187,5 +195,16 @@ export default App;
   }
 
   const API_KEY = "81101292e91a941f627ea27ec02cf4bd";
+
+
+                  <ul>
+                    {data.length <= 0 ? "NO DB ENTRIES YET" : data.map(dat => (
+                      <li style={{ padding: "10px" }} key={dat}>
+                        <span style={{ color: "gray" }}> id: </span> {dat.id} <br />
+                        <span style={{ color: "gray" }}> data: </span>
+                        {dat.message}
+                      </li>
+                    ))}
+                  </ul> 
 
 */
