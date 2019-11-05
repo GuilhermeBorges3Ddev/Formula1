@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import axios from "axios";
+import Chart from 'react-google-charts';
 import '../EstiloMain/App.css';
 import '../EstiloMain/bg.png';
 
@@ -7,31 +7,6 @@ import BarraHorizontal from '../../Componentes/BarraHorizontal';
 import BarraVertical from '../../Componentes/BarraVertical';
 
 class MediasLargadas extends Component{
-
-  state = {
-    data: [],
-    id: 0,
-    message: null,
-    intervalIsSet: false,
-    idToDelete: null,
-    idToUpdate: null,
-    objectToUpdate: null
-  }
-
-  componentDidMount() {
-    this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.state.intervalIsSet) {
-      clearInterval(this.state.intervalIsSet);
-      this.setState({ intervalIsSet: null });
-    }
-  }
 
   getDataFromDb = () => {
     fetch("http://localhost:3001/api/getData")
@@ -56,7 +31,32 @@ class MediasLargadas extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
+                
                 <h1 className="text-white">Medias Largadas</h1>
+
+                <div className="d-flex w-100 h-100 mr-5" style={{backgroundColor: "transparent;"}}>
+                <Chart
+                  width={'825px'}
+                  height={'500px'}
+                  chartType="AreaChart"
+                  loader={<div>Loading Chart</div>}
+                  data={[
+                    ['', 'Menor, médio e maior tempo de largada (AZUL)', 'Média do horário de largada(VERMELHO)'],
+                    ['', 2.13, 1.57],
+                    ['', 1.57, 1.57],
+                    ['', 1.31, 1.57],
+                  ]}
+                  options={{
+                    title: 'Horários de largada, dos em mls e convertidos para hrs',
+                    backgroundColor: 'none',
+                    hAxis: { title: '', titleTextStyle: { color: '#333' } },
+                    vAxis: { minValue: 0, titleTextStyle: { color: 'green' } },
+                    chartArea: { width: '50%', height: '70%' },
+                  }}
+                  rootProps={{ 'data-testid': '1' }}
+                  />
+                </div>
+
               </div>
 
             </div>

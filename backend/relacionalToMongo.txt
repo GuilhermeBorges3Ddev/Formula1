@@ -24,3 +24,15 @@ Pegando o retorno dos 5 pilotos mais assíduos com ID: 8(141 corridas), 5(105 co
  1(105 corridas), 9(102 corridas), 24(87 corridas)   
 
 //////////////////////////////////////////////////////////////
+
+RELATÓRIO DAS MÉDIAS DE LARGADA:
+
+db.RaceResults.aggregate([{$group : {_id : null, Maxmilliseconds: { $max: "$milliseconds" }}}])
+db.RaceResults.aggregate([{$group : {_id : null, Mediamilliseconds: { $avg: "$milliseconds" },}}])
+db.RaceResults.aggregate([{$group : {_id : null, Menormilliseconds: { $min: "$milliseconds" }}}])
+
+Retorno do maior tempo: 7668773 ms = 2.13 hrs
+Retorno do tempo médio: 5687131 ms = 1.57 hrs
+Retorno do menor tempo: 4717806 ms = 1.31 hrs
+
+//////////////////////////////////////////////////////////////
