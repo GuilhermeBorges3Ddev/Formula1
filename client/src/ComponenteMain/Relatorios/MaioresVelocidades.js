@@ -56,7 +56,7 @@ class MaioresVelocidades extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                 Maiores Velocidades
+                <h1 className="text-white">Maiores Velocidades</h1>
               </div>
 
             </div>

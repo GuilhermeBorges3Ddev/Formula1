@@ -56,7 +56,7 @@ class ProvasPorCircuitos extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                 Provas por circuitos
+                <h1 className="text-white">Provas por circuitos</h1>
               </div>
 
             </div>

@@ -56,7 +56,7 @@ class MediasLargadas extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                 Medias Largadas
+                <h1 className="text-white">Medias Largadas</h1>
               </div>
 
             </div>

@@ -56,7 +56,7 @@ class CorridasPorRegiao extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                Corridas por região
+                <h1 className="text-white">Corridas por região</h1>
               </div>
 
             </div>

@@ -56,7 +56,7 @@ class AssiduidadePilotos extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                Assiduidade pilotos
+                <h1 className="text-white">Assiduidade pilotos</h1>
               </div>
 
             </div>

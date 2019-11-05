@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import "../ComponenteMain/EstiloMain/App.css"
 
 const BarraVertical = () => {
@@ -10,25 +11,25 @@ const BarraVertical = () => {
                         Relatórios
                     </li>
                     <li className="mt-2">
-                        <a href="/">Maiores Velocidades</a>
+                        <Link to="/maioresVelocidades">Maiores Velocidades</Link>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Piloto por país</a>
+                        <Link to="/pilotoPorPais">Piloto por país</Link>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Provas por circuitos</a>
+                        <Link to="/provasPorCircuito">Provas por circuitos</Link>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Médias das largadas</a>
+                        <Link to="/mediasLargadas">Médias das largadas</Link>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Assiduidade pilotos</a>
+                        <Link to="/assiduidadePilotos">Assiduidade pilotos</Link>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Corridas por região</a>
+                        <Link to="/corridasPorRegiao">Corridas por região</Link>
                     </li>
                     <li className="mt-2">
-                        <a href="/">Eventos pelo mundo</a>
+                        <Link to="/eventosPeloMundo">Eventos pelo mundo</Link>
                     </li>
                 </ul>
             </div>

@@ -56,7 +56,7 @@ class EventosPeloMundo extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                Eventos pelo mundo
+                <h1 className="text-white">Eventos pelo mundo</h1>
               </div>
 
             </div>

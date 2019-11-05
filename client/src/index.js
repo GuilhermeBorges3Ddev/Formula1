@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import './index.css';
 import App from './ComponenteMain/App';
@@ -18,14 +18,16 @@ import ProvasPorCircuitos from './ComponenteMain/Relatorios/ProvasPorCircuitos';
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
-        <AssiduidadePilotos />
-        <CorridasPorRegiao />
-        <EventosPeloMundo />
-        <MaioresVelocidades />
-        <MediasLargadas />
-        <PilotoPorPais />
-        <ProvasPorCircuitos />
+        <Switch>
+            <Route path="/" exact={true} component={App} />
+            <Route path="/assiduidadePilotos" exact={true} component={AssiduidadePilotos} />
+            <Route path="/corridasPorRegiao" exact={true} component={CorridasPorRegiao} />
+            <Route path="/eventosPeloMundo" exact={true} component={EventosPeloMundo} />
+            <Route path="/maioresVelocidades" exact={true} component={MaioresVelocidades} />
+            <Route path="/mediasLargadas" exact={true} component={MediasLargadas} />
+            <Route path="/pilotoPorPais" exact={true} component={PilotoPorPais} />
+            <Route path="/provasPorCircuito" exact={true} component={ProvasPorCircuitos} />
+        </Switch>
     </BrowserRouter>
     , document.getElementById('root'));
 registerServiceWorker();
