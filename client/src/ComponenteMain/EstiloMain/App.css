@@ -17,11 +17,24 @@ body {
   overflow-x: hidden;
 }
 
+.chartPilotoPais{
+  margin-right: 1000px !important;
+  display: flex;
+  justify-content: start !important;
+}
+
 .wrapper {
   background: url("./bg.png") center center no-repeat;
   height: 95vh;
   display: flex;
   align-items: center;
+}
+
+.wrapper-piloto-pais{
+  background: url("./bg.png") center center no-repeat;
+  height: 95vh;
+  display: flex;
+  justify-content: start;
 }
 
 #lastSearch{

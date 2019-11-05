@@ -62,9 +62,8 @@ class App extends Component{
     axios.post("http://localhost:3001/api/putData", fetch('https://ergast.com/api/f1/current/last/results.json'));
   };
   
-  //
   render(){
-    // const { data } = this.state;
+
     return (
 
       <div className="row">

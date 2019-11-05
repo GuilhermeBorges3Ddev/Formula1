@@ -1,46 +1,35 @@
 import React, { Component } from 'react';
-//import axios from "axios";
+import "./PilotoPorPais.css";
 import '../EstiloMain/App.css';
 import '../EstiloMain/bg.png';
 
 import BarraHorizontal from '../../Componentes/BarraHorizontal';
 import BarraVertical from '../../Componentes/BarraVertical';
+import BarChartPilotoPais from '../Graficos/BarChartPilotoPais';
 
 class PilotoPorPais extends Component{
-
-  state = {
-    data: [],
-    id: 0,
-    message: null,
-    intervalIsSet: false,
-    idToDelete: null,
-    idToUpdate: null,
-    objectToUpdate: null
-  }
-
-  componentDidMount() {
-    this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.state.intervalIsSet) {
-      clearInterval(this.state.intervalIsSet);
-      this.setState({ intervalIsSet: null });
-    }
-  }
-
-  getDataFromDb = () => {
-    fetch("http://localhost:3001/api/getData")
-      .then(data => data.json())
-      .then(res => this.setState({ data: res.data }));
-  };
-  
+ 
   render(){
     
+    const data = [
+      {
+        xField: "França",
+        yField: 100
+      },
+      {
+        xField: "Brasil",
+        yField: 80
+      },
+      {
+        xField: "Estados Unidos",
+        yField: 76
+      },
+      {
+        xField: "Outros países",
+        yField: 76
+      }
+    ];
+
     return (
 
       <div className="row">
@@ -53,13 +42,29 @@ class PilotoPorPais extends Component{
           <div className="bar-horizontal">
             <BarraHorizontal/>
           </div>
-          <div className="wrapper">
+          <div className="wrapper-piloto-pais">
 
-              <div className="row w-75 ml-5 justify-content-between align-items-start">
-                <h1 className="text-white">Piloto por país</h1>
-              </div>
+              <div className="row w-100 h-100 ml-5 mt-4">
+                <h1 className="text-white text-nowrap">Pilotos por país</h1>
+              
+                  <div className="d-flex w-100 h-100 mr-5 chartPilotoPais">
+                      <BarChartPilotoPais 
+                        width="650"
+                        height="500"
+                        title="Quantidade de Pilotos por país"
+                        data={data}
+                        xRange={[0, 400]}
+                        xDomain={data.map((s) => s.xField)}
+                        yRange={[340, 0]}
+                        yDomain={[0, 100]}>
+                      </BarChartPilotoPais>
+                  </div>
 
+                </div>
+             
             </div>
+
+
           </div>
         </div>
 
