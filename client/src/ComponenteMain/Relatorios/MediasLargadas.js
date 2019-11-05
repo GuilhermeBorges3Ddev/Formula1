@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import axios from "axios";
-import './EstiloMain/App.css';
-import './EstiloMain/bg.png';
+import '../EstiloMain/App.css';
+import '../EstiloMain/bg.png';
 
 import BarraHorizontal from '../../Componentes/BarraHorizontal';
 import BarraVertical from '../../Componentes/BarraVertical';
