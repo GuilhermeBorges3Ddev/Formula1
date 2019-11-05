@@ -14,19 +14,27 @@ class PilotoPorPais extends Component{
     const data = [
       {
         xField: "França",
-        yField: 100
+        yField: 146
       },
       {
         xField: "Brasil",
-        yField: 80
+        yField: 62
       },
       {
         xField: "Estados Unidos",
-        yField: 76
+        yField: 314
       },
       {
-        xField: "Outros países",
-        yField: 76
+        xField: "Itália",
+        yField: 198
+      },
+      {
+        xField: "Inglaterra",
+        yField: 328
+      },
+      {
+        xField: "Outros",
+        yField: 646
       }
     ];
 
@@ -56,7 +64,7 @@ class PilotoPorPais extends Component{
                         xRange={[0, 400]}
                         xDomain={data.map((s) => s.xField)}
                         yRange={[340, 0]}
-                        yDomain={[0, 100]}>
+                        yDomain={[0, 650]}>
                       </BarChartPilotoPais>
                   </div>
 

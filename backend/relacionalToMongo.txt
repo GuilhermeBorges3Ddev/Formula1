@@ -3,3 +3,14 @@ pilotos -----------------------------> DriverInformation
 pontuacoes --------------------------> Standings
 datas -------------------------------> RaceSchedule
 resultados --------------------------> RaceResults
+
+//////////////////////////////////////////////////////////////
+RELATÓRIO DEMOGRÁFICO:
+
+db.DriverInformation.find({"nationality":"French"}).count()
+db.DriverInformation.find({"nationality":"Brazilian"}).count()
+db.DriverInformation.find({"nationality":"American"}).count()                                              
+db.DriverInformation.find({"nationality":"Italian"}).count()                                                   
+db.DriverInformation.find({"nationality":"British"}).count()
+
+//////////////////////////////////////////////////////////////
