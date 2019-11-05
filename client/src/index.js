@@ -11,7 +11,6 @@ import "./ComponenteMain/EstiloMain/App.css";
 import AssiduidadePilotos from './ComponenteMain/Relatorios/AssiduidadePilotos';
 import CorridasPorRegiao from './ComponenteMain/Relatorios/CorridasPorRegiao';
 import TotalDeCorridas from './ComponenteMain/Relatorios/TotalDeCorridas';
-import MaioresVelocidades from './ComponenteMain/Relatorios/MaioresVelocidades';
 import MediasLargadas from './ComponenteMain/Relatorios/MediasLargadas';
 import PilotoPorPais from './ComponenteMain/Relatorios/PilotoPorPais';
 import ProvasPorCircuitos from './ComponenteMain/Relatorios/ProvasPorCircuitos';
@@ -23,7 +22,6 @@ ReactDOM.render(
             <Route path="/assiduidadePilotos" exact={true} component={AssiduidadePilotos} />
             <Route path="/corridasPorRegiao" exact={true} component={CorridasPorRegiao} />
             <Route path="/totalDeCorridas" exact={true} component={TotalDeCorridas} />
-            <Route path="/maioresVelocidades" exact={true} component={MaioresVelocidades} />
             <Route path="/mediasLargadas" exact={true} component={MediasLargadas} />
             <Route path="/pilotoPorPais" exact={true} component={PilotoPorPais} />
             <Route path="/provasPorCircuito" exact={true} component={ProvasPorCircuitos} />

@@ -46,6 +46,16 @@ db.RaceSchedule.find({
     },
 }).count();
 
+db.RaceSchedule.find({
+    "date": {
+        $gte: ISODate("2014-02-01T00:00:00.000Z"),
+        $lt: ISODate("2015-01-01T00:00:00.000Z"),
+    },
+}).count();
+
+db.RaceSchedule.find({}).count();
+
 Retorna um total de 63 corridas entre 2016/2017 
+Retorna um total de 57 corridas entre 2014/2015 
 
 //////////////////////////////////////////////////////////////

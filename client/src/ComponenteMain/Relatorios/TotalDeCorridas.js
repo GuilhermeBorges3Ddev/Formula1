@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import axios from "axios";
+import Chart from 'react-google-charts';
 import '../EstiloMain/App.css';
 import '../EstiloMain/bg.png';
 
@@ -7,31 +7,6 @@ import BarraHorizontal from '../../Componentes/BarraHorizontal';
 import BarraVertical from '../../Componentes/BarraVertical';
 
 class TotalDeCorridas extends Component{
-
-  state = {
-    data: [],
-    id: 0,
-    message: null,
-    intervalIsSet: false,
-    idToDelete: null,
-    idToUpdate: null,
-    objectToUpdate: null
-  }
-
-  componentDidMount() {
-    this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.state.intervalIsSet) {
-      clearInterval(this.state.intervalIsSet);
-      this.setState({ intervalIsSet: null });
-    }
-  }
 
   getDataFromDb = () => {
     fetch("http://localhost:3001/api/getData")
@@ -57,6 +32,41 @@ class TotalDeCorridas extends Component{
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
                 <h1 className="text-white">Total de Corridas</h1>
+                <div className="d-flex w-100 h-100 mr-5" style={{backgroundColor: "transparent;"}}>
+                <Chart
+                  width={'600px'}
+                  height={'400px'}
+                  chartType="ScatterChart"
+                  loader={<div>Loading Chart</div>}
+                  data={[
+                    ['', 'Total de Corridas'],
+                    [0, 63],
+                    [0, 57]
+                  ]}
+                  options={{
+                    title: 'Número de corridas entre 2014/2015(57 corridas) versus 2016/2017(63 corridas)',
+                    hAxis: { title: '', minValue: 0, maxValue: 0 },
+                    vAxis: { title: 'Total de Corridas', minValue: 0, maxValue: 15 },
+                    backgroundColor: 'none',
+                    legend: 'none',
+                    animation: {
+                      startup: true,
+                      easing: 'linear',
+                      duration: 1500,
+                    },
+                    enableInteractivity: false,
+                  }}
+                  chartEvents={[
+                    {
+                      eventName: 'animationfinish',
+                      callback: () => {
+                        console.log('Animation Finished')
+                      },
+                    },
+                  ]}
+                  rootProps={{ 'data-testid': '1' }}
+                />
+                </div>
               </div>
 
             </div>
