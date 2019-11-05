@@ -14,3 +14,13 @@ db.DriverInformation.find({"nationality":"Italian"}).count()
 db.DriverInformation.find({"nationality":"British"}).count()
 
 //////////////////////////////////////////////////////////////
+
+RELATÓRIO DE ASSIDUIDADE:
+
+db.RaceResults.aggregate([{$group: {_id: "$driverId", quant_corrida: {$sum: 1}}}])
+db.RaceResults.count({})
+
+Pegando o retorno dos 5 pilotos mais assíduos com ID: 8(141 corridas), 5(105 corridas),
+ 1(105 corridas), 9(102 corridas), 24(87 corridas)   
+
+//////////////////////////////////////////////////////////////
