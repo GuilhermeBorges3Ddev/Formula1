@@ -14,24 +14,22 @@ const router = express.Router();
 const dbRoute =
   'mongodb+srv://ergastAdmin:2foi3vai7zdp@cluster0-dkrcl.mongodb.net/Formula1?retryWrites=true&w=majority';
 
-// connects our back end code with the database
+// Conecta o backend com a database
 mongoose.connect(dbRoute, { useNewUrlParser: true });
 
 let db = mongoose.connection;
 
 db.once('open', () => console.log('connected to the database'));
 
-// checks if connection with the database is successful
+// Checa se houve sucesso na conexão com a database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-// (optional) only made for logging and
-// bodyParser, parses the request body to be a readable json format
+// body-parser, converte o body da requisição em json
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-// this is our get method
-// this method fetches all available data in our database
+// GET
 router.get('/getData', (req, res) => {
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
@@ -39,8 +37,7 @@ router.get('/getData', (req, res) => {
   });
 });
 
-// this is our update method
-// this method overwrites existing data in our database
+// UPDATE
 router.post('/updateData', (req, res) => {
   const { id, update } = req.body;
   Data.findByIdAndUpdate(id, update, (err) => {
@@ -49,8 +46,7 @@ router.post('/updateData', (req, res) => {
   });
 });
 
-// this is our delete method
-// this method removes existing data in our database
+// DELETE
 router.delete('/deleteData', (req, res) => {
   const { id } = req.body;
   Data.findByIdAndRemove(id, (err) => {
@@ -59,8 +55,7 @@ router.delete('/deleteData', (req, res) => {
   });
 });
 
-// this is our create methid
-// this method adds new data in our database
+// INSERT
 router.post('/putData', (req, res) => {
   let data = new Data();
 
@@ -80,8 +75,8 @@ router.post('/putData', (req, res) => {
   });
 });
 
-// append /api for our http requests
+// Gera rota /api para nossas requisições http
 app.use('/api', router);
 
-// launch our backend into a port
+// Aciona backend na porta passada
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
