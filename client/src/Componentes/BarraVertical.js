@@ -29,7 +29,7 @@ const BarraVertical = () => {
                         <Link to="/corridasPorRegiao">Corridas por região</Link>
                     </li>
                     <li className="mt-2">
-                        <Link to="/eventosPeloMundo">Eventos pelo mundo</Link>
+                        <Link to="/totalDeCorridas">Total de corridas</Link>
                     </li>
                 </ul>
             </div>

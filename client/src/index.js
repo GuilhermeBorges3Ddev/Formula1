@@ -10,7 +10,7 @@ import "./ComponenteMain/EstiloMain/App.css";
 //Relatórios viram rotas à serem importadas
 import AssiduidadePilotos from './ComponenteMain/Relatorios/AssiduidadePilotos';
 import CorridasPorRegiao from './ComponenteMain/Relatorios/CorridasPorRegiao';
-import EventosPeloMundo from './ComponenteMain/Relatorios/EventosPeloMundo';
+import TotalDeCorridas from './ComponenteMain/Relatorios/TotalDeCorridas';
 import MaioresVelocidades from './ComponenteMain/Relatorios/MaioresVelocidades';
 import MediasLargadas from './ComponenteMain/Relatorios/MediasLargadas';
 import PilotoPorPais from './ComponenteMain/Relatorios/PilotoPorPais';
@@ -22,7 +22,7 @@ ReactDOM.render(
             <Route path="/" exact={true} component={App} />
             <Route path="/assiduidadePilotos" exact={true} component={AssiduidadePilotos} />
             <Route path="/corridasPorRegiao" exact={true} component={CorridasPorRegiao} />
-            <Route path="/eventosPeloMundo" exact={true} component={EventosPeloMundo} />
+            <Route path="/totalDeCorridas" exact={true} component={TotalDeCorridas} />
             <Route path="/maioresVelocidades" exact={true} component={MaioresVelocidades} />
             <Route path="/mediasLargadas" exact={true} component={MediasLargadas} />
             <Route path="/pilotoPorPais" exact={true} component={PilotoPorPais} />

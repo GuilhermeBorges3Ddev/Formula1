@@ -6,7 +6,7 @@ import '../EstiloMain/bg.png';
 import BarraHorizontal from '../../Componentes/BarraHorizontal';
 import BarraVertical from '../../Componentes/BarraVertical';
 
-class EventosPeloMundo extends Component{
+class TotalDeCorridas extends Component{
 
   state = {
     data: [],
@@ -56,7 +56,7 @@ class EventosPeloMundo extends Component{
           <div className="wrapper">
 
               <div className="row w-75 ml-5 justify-content-between align-items-start">
-                <h1 className="text-white">Eventos pelo mundo</h1>
+                <h1 className="text-white">Total de Corridas</h1>
               </div>
 
             </div>
@@ -68,4 +68,4 @@ class EventosPeloMundo extends Component{
 
 }
 
-export default EventosPeloMundo;
+export default TotalDeCorridas;
