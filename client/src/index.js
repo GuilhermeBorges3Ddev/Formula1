@@ -9,7 +9,6 @@ import "./ComponenteMain/EstiloMain/App.css";
 
 //Relatórios viram rotas à serem importadas
 import AssiduidadePilotos from './ComponenteMain/Relatorios/AssiduidadePilotos';
-import CorridasPorRegiao from './ComponenteMain/Relatorios/CorridasPorRegiao';
 import TotalDeCorridas from './ComponenteMain/Relatorios/TotalDeCorridas';
 import MediasLargadas from './ComponenteMain/Relatorios/MediasLargadas';
 import PilotoPorPais from './ComponenteMain/Relatorios/PilotoPorPais';
@@ -20,7 +19,6 @@ ReactDOM.render(
         <Switch>
             <Route path="/" exact={true} component={App} />
             <Route path="/assiduidadePilotos" exact={true} component={AssiduidadePilotos} />
-            <Route path="/corridasPorRegiao" exact={true} component={CorridasPorRegiao} />
             <Route path="/totalDeCorridas" exact={true} component={TotalDeCorridas} />
             <Route path="/mediasLargadas" exact={true} component={MediasLargadas} />
             <Route path="/pilotoPorPais" exact={true} component={PilotoPorPais} />

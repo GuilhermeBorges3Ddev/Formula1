@@ -61,3 +61,17 @@ Retorna um total de 57 corridas entre 2014/2015
 //////////////////////////////////////////////////////////////
 
 RELATÓRIO DE PROVAS POR CIRCUITOS:
+
+db.RaceSchedule.aggregate(
+  {
+    $group: {
+      _id: {
+        circuitId: '$circuitId'
+      },
+      count: {
+        $sum: 1
+      }
+    }
+  }
+)
+
